@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  mysql-local:
+    image: mysql:5.7
+    container_name: mysql-local
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - 3306:3306
+    networks:
+      - db_sharing
+    command: --sql_mode=""
+
+networks:
+  db_sharing:
